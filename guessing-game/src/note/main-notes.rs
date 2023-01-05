@@ -48,7 +48,10 @@ fn main() { // The main (fn) function is the entry point into the program, fn sy
             // Ordering is another type of enum that contains three different types of variants, Less, Greater and Equal
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => println!("You win!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break; // adding a break to stop the gane while the user guess the correct answer
+            }
         }
 
         // up till here, the code won't compile, because the guess variable is inputted as a string, while the secret number is an integer, hence the rust system won't accpet
