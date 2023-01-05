@@ -41,7 +41,13 @@ fn main() { // The main (fn) function is the entry point into the program, fn sy
             // io::stdin().read_line(&mut guess).expect("Failed to read line"); hard to read
             // always introduce a new line when intriducing a new method with .method_name() syntax
             // expect is a method to handle the outcome of an unespected event, if we do not have .expect method, the program will be compiled but will bump out warning
-        
+
+        let guess: u32 = match guess.trim().parse() { // adding features to ignore non-numerical inputs for preventing the program from further crashes
+            // replaces the original expect expression to a match expression for handling crashes
+            Ok(num) => num, // returns an Ok value that contains the resultant number
+            Err(_) => continue, // if non-numerical, bumps you error
+        };
+
         println!("You guessed: {guess}"); // println with placeholders, variable names can go between the curly brackets as placeholders, the guess variable is the input string defiled earlier when input, see practice.rs for further explanation
 
         match guess.cmp(&secret_number) { // cmp method compares the two different values and can be called on anything that can be compared, matches the input string, valued as guess, to the secret number defined later and make the comparison
