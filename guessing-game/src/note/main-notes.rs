@@ -12,7 +12,15 @@ fn main() { // The main (fn) function is the entry point into the program, fn sy
     // gen_range is the method to generate a range of random numbers, while the range is between 1 to 100
 
     let guess:u32 = guess.trim().parse().espect("Please type a number!"); // create a variable named guess, while we have already created one, but this ensures us to convert between different values types
-    // 
+    // bind this guess variable to guess.trim().parse()
+    // guess in the expression refers to the original guess variable that was inputted as a string
+    // the trim method on a string will eliminate any white space at the beginning and at the line end
+        // THIS IS A MUST DO BEFORE converting into u23 type
+        // u32 can only contain numerical data
+    // the user must press enter to escape into new line
+    // parse method will only work on characters that can logically be converted into numbers, strings contains emoji such as 😁 will not work
+    
+
 
     println!("The secret number is: {secret_number}");
 
